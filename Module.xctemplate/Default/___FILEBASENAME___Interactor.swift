@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol I___VARIABLE_productName:identifier___InteractorDelegate: class {}
+protocol I___VARIABLE_productName:identifier___InteractorDelegate: AnyObject {}
 
-protocol I___VARIABLE_productName:identifier___Interactor: class {
+protocol I___VARIABLE_productName:identifier___Interactor: AnyObject {
     var delegate: I___VARIABLE_productName:identifier___InteractorDelegate? { get set }
 }
 

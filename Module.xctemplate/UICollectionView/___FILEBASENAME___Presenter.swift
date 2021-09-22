@@ -2,17 +2,16 @@
 //  ___FILENAME___
 //  ___PROJECTNAME___
 //
-//  Copyright © ___YEAR___ Lanars. All rights reserved.
-//  https://lanars.com/
+//  Copyright © ___YEAR___ Konstantin Syrbu. All rights reserved.
+//  m4f1h4rd@gmail.com
 //
 
 import Foundation
 
-protocol I___VARIABLE_productName:identifier___Presenter: class {
+protocol I___VARIABLE_productName:identifier___Presenter: AnyObject {
     var parameters: [String: Any]? { get set }
 
     func onViewDidLoad()
-    func getTitle() -> String
     func getRowsCount() -> Int
     func getRowType(at indexPath: IndexPath) -> ___VARIABLE_productName:identifier___CollectionViewConfig
     func getData<Value>(at indexPath: IndexPath) -> Value?
@@ -26,7 +25,7 @@ final class ___VARIABLE_productName:identifier___Presenter: I___VARIABLE_product
     var parameters: [String: Any]?
 
     private var interactor: I___VARIABLE_productName:identifier___Interactor!
-    private var wireframe: I___VARIABLE_productName:identifier___Wireframe!
+    private var router: I___VARIABLE_productName:identifier___Router!
     private weak var view: I___VARIABLE_productName:identifier___ViewController!
 
     private var model: Any?
@@ -34,9 +33,9 @@ final class ___VARIABLE_productName:identifier___Presenter: I___VARIABLE_product
 
     // MARK: - Lifecycle
 
-    init(interactor: I___VARIABLE_productName:identifier___Interactor, wireframe: I___VARIABLE_productName:identifier___Wireframe, view: I___VARIABLE_productName:identifier___ViewController) {
+    init(interactor: I___VARIABLE_productName:identifier___Interactor, router: I___VARIABLE_productName:identifier___Router, view: I___VARIABLE_productName:identifier___ViewController) {
         self.interactor = interactor
-        self.wireframe = wireframe
+        self.router = router
         self.view = view
     }
 
@@ -44,10 +43,6 @@ final class ___VARIABLE_productName:identifier___Presenter: I___VARIABLE_product
 
     func onViewDidLoad() {
         model = parameters?["Model"]
-    }
-    
-    func getTitle() -> String {
-        return "".localized
     }
     
     // MARK: - CollectionView config
@@ -85,8 +80,6 @@ final class ___VARIABLE_productName:identifier___Presenter: I___VARIABLE_product
             
         view?.showActivity()
     }
-
-    // MARK: - Handle
 
 }
 

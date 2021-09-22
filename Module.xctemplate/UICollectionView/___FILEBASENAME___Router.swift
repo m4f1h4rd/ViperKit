@@ -1,36 +1,31 @@
 //
 //  ___FILENAME___
 //  ___PROJECTNAME___
-//
-//  Copyright © ___YEAR___ Lanars. All rights reserved.
-//  https://lanars.com/
+////
+//  Copyright © ___YEAR___ Konstantin Syrbu. All rights reserved.
+//  m4f1h4rd@gmail.com
 //
 
 import Foundation
 
-protocol I___VARIABLE_productName:identifier___Wireframe: class {
-    func closeVC()
-    func navigateTo_Next_VC(params: [String: Any])
+protocol I___VARIABLE_productName:identifier___Router: AnyObject {
+    func closeVC(_ animated: Bool)
 }
 
-final class ___VARIABLE_productName:identifier___Wireframe: I___VARIABLE_productName:identifier___Wireframe {
+final class ___VARIABLE_productName:identifier___Router: I___VARIABLE_productName:identifier___Router {
 
-    private let router: IAppRouter
+    private let coordinator: ICoordinator
 
     // MARK: - Lifecycle
 
-    init(router: IAppRouter) {
-        self.router = router
+    init(coordinator: ICoordinator) {
+        self.coordinator = coordinator
     }
 
     // MARK: - Navigation
 
-    func closeVC() {
-        AppRouter.shared.dismissFromNavigationController(true)
-    }
-
-    func navigateTo_Next_VC(params: [String: Any]) {
-        //AppRouter.shared.presentModule(BaseVC.self, .push, true, params)
+    func closeVC(_ animated: Bool) {
+        Coordinator.shared.dismissFromNavigationController(true)
     }
 
 }

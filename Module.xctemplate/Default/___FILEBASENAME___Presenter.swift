@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol I___VARIABLE_productName:identifier___Presenter: class {
+protocol I___VARIABLE_productName:identifier___Presenter: AnyObject {
     var parameters: [String: Any]? { get set }
 
     func onViewDidLoad()

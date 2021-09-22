@@ -2,8 +2,8 @@
 //  ___FILENAME___
 //  ___PROJECTNAME___
 //
-//  Copyright © ___YEAR___ Lanars. All rights reserved.
-//  https://lanars.com/
+//  Copyright © ___YEAR___ Konstantin Syrbu. All rights reserved.
+//  m4f1h4rd@gmail.com
 //
 
 import UIKit
@@ -25,16 +25,6 @@ final class ___VARIABLE_productName:identifier___ViewController: BaseVC {
 
         prepareCollectionView()
         presenter.onViewDidLoad()
-    }
-
-    // MARK: - UI
-
-    override func prepareUI() {}
-
-    // MARK: - Localization
-
-    override func prepareLocalization() {
-        title = presenter.getTitle()
     }
 
 }

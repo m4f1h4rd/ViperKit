@@ -2,8 +2,8 @@
 //  ___FILENAME___
 //  ___PROJECTNAME___
 //
-//  Copyright © ___YEAR___ Lanars. All rights reserved.
-//  https://lanars.com/
+//  Copyright © ___YEAR___ Konstantin Syrbu. All rights reserved.
+//  m4f1h4rd@gmail.com
 //
 
 import UIKit
@@ -25,16 +25,6 @@ final class ___VARIABLE_productName:identifier___ViewController: BaseVC {
         
         prepareTableView()
         presenter.onViewDidLoad()
-    }
-
-    // MARK: - UI
-
-    override func prepareUI() {}
-
-    // MARK: - Localization
-
-    override func prepareLocalization() {
-        title = presenter.getTitle()
     }
 
 }
@@ -75,25 +65,6 @@ extension ___VARIABLE_productName:identifier___ViewController: UITableViewDataSo
             let cell = tableView.dequeueReusableCell(UITableViewCell.self)
             return cell
         }
-    }
-
-}
-
-// MARK: - UITableViewDelegate
-
-extension ___VARIABLE_productName:identifier___ViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        DispatchQueue.main.async {
-            self.dismiss(animated: true) {
-                self.presenter.selectRow(at: indexPath)
-            }
-        }
-    }
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        presenter.handleWillDisplay(at: indexPath)
     }
 
 }

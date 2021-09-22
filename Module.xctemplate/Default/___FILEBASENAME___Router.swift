@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol I___VARIABLE_productName:identifier___Router: class {
-    func closeVC()
+protocol I___VARIABLE_productName:identifier___Router: AnyObject {
+    func closeVC(_ animated: Bool)
 }
 
 final class ___VARIABLE_productName:identifier___Router: I___VARIABLE_productName:identifier___Router {
@@ -24,7 +24,7 @@ final class ___VARIABLE_productName:identifier___Router: I___VARIABLE_productNam
 
     // MARK: - Navigation
 
-    func closeVC(_ animated: Bool = true) {
+    func closeVC(_ animated: Bool) {
         Coordinator.shared.dismissFromNavigationController(animated)
     }
 
